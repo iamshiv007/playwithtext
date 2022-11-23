@@ -1,5 +1,5 @@
 {
-  "homepage": "https://iamshiv007.github.io/textUtils",
+  "homepage": "https://iamshiv007.github.io/playwithtext",
   "name": "text-app",
   "version": "0.1.0",
   "private": true,
@@ -38,8 +38,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "gh-pages": "^4.0.0"
   }
 }
