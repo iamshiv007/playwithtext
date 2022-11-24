@@ -36,10 +36,11 @@ export default function TextArea(props) {
   const writtingInput = (event) => {
     setText(event.target.value);
   };
-  //Sabhi \n ki jagah "" ko replace karaya
-  let lineSpace = text.split(" ").map((word) => word.replaceAll("\n", ""));
-  //Array main jo khali string ("") hai unhe hataya
-  let finalArray = lineSpace.filter((word) => word !== "");
+  //Sabse pahale text ko " " se split karaya fir \n===" " kara fir sabhi string ko join kar diya
+  let lineSpace = text.split(" ").map((word) => word.replaceAll("\n", " ")).join(" ");
+  // Yaha par hamne uper join kiye hua string ko fir se split karwaya par agay ek se jyada space the to unko khatam kar diya
+  let nextArray = lineSpace.split(/[ ]+/);
+  let finalArray = nextArray.filter((word) => word !== "");
   console.log(finalArray);
   return (
     <>
