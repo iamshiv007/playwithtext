@@ -2,16 +2,15 @@ import React from "react";
 // import { NavLink } from "react-router-dom";
 
 export default function Navbar(props) {
-  
+  //Navbar component
   return (
     <div>
+      {/* //LightMode <===> DarkMode */}
       <nav
         className={`navbar navbar-expand-lg navbar-${props.Mode} bg-${props.Mode}`}
       >
         <div className="container-fluid">
-          <h3 className="navbar-brand">
-            Text-App
-          </h3>
+          <h3 className="navbar-brand">Text-App</h3>
           <button
             className="navbar-toggler"
             type="button"
@@ -26,8 +25,8 @@ export default function Navbar(props) {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <h3 className="nav-link" aria-current="page" >
-                  <b>Home</b> 
+                <h3 className="nav-link active" aria-current="page">
+                  <b>Home</b>
                 </h3>
               </li>
               {/* <li className="nav-item">
@@ -53,15 +52,16 @@ export default function Navbar(props) {
                   type="checkbox"
                   role="switch"
                   id="flexSwitchCheckDefault"
-                  onClick={() => props.modeToggler("black")}
+                  //Mode change btn
+                  onClick={props.modeToggler}
                 />
+                {/* //text color change */}
                 <label
-                  className={`form-check-label text-${
-                    props.Mode === "light" ? "dark" : "light"
-                  }`}
+                  className="form-check-label" 
                   htmlFor="flexSwitchCheckDefault"
                 >
-                  {props.Mode === "light" ? "light" : "dark"}
+                  {/* // Light <==> Dark */}
+                  {props.Mode === "dark" ? "light mode" : "dark mode"}
                 </label>
               </div>
             </form>

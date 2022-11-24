@@ -7,26 +7,27 @@ import React, { useState } from "react";
 // import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
+  //Mode or alert ko set karane ke liye state function
   const [Mode, setMode] = useState("light");
-  const [alert, setAlert] = useState({message:'',type:""});
+  const [alert, setAlert] = useState({ message: "", type: "" });
+  //2 second alert show kara kar automatic hide karana
   const showMsg = (msg, type) => {
     setAlert({
       message: msg,
       type: type,
     });
     setTimeout(() => {
-      setAlert({message:'',type:""});
+      setAlert({ message: "", type: "" });
     }, 2000);
   };
-  const modeToggler = (color) => {
+  //mode light ho to dark or dark ho to light karo
+  const modeToggler = () => {
     if (Mode === "light") {
       setMode("dark");
-      document.body.style.backgroundColor = color;
+      document.body.style.backgroundColor = "black";
       document.body.style.color = "white";
       setTimeout(showMsg("Success : dark mode enabled", "dark"), 3000);
       document.title = " Text Util Dark mode";
-      // setInterval(() => (document.title = "Virus virus"), 1300);
-      // setInterval(() => (document.title = "Bug bug"), 1100);
     } else {
       setMode("light");
       document.body.style.backgroundColor = "white";
@@ -48,7 +49,7 @@ function App() {
       {/* path="/" */}
       {/* element={ */}
       <TextArea
-        heading="Write your suggestions below"
+        heading="Write or paste your text below"
         Mode={Mode}
         showMsg={showMsg}
       />

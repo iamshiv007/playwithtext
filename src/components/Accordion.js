@@ -1,12 +1,27 @@
-import React, { useState } from "react";
+import React from "react";
 
 export default function Accordion(props) {
   return (
-    <div className="container mt-5 p-3" style={props.Mode==="light"?{backgroundColor:"white",color:"black"}:{backgroundColor:"#202c68",color:"white"}}>
-        <h2 >About us</h2>
-      <div className="accordion" id="accordionExample" >
-        <div className="accordion-item" style={props.Mode==="light"?{backgroundColor:"white",color:"black"}:{backgroundColor:"#202c68",color:"white"}}>
-          <h2 className="accordion-header" id="headingOne" >
+    //Accordion component for about page
+    <div
+      className="container mt-5 p-3"
+      style={
+        props.Mode === "light"
+          ? { backgroundColor: "white", color: "black" }
+          : { backgroundColor: "#202c68", color: "white" }
+      }
+    >
+      <h2>About us</h2>
+      <div className="accordion" id="accordionExample">
+        <div
+          className="accordion-item"
+          style={
+            props.Mode === "light"
+              ? { backgroundColor: "white", color: "black" }
+              : { backgroundColor: "#202c68", color: "white" }
+          }
+        >
+          <h2 className="accordion-header" id="headingOne">
             <button
               className="accordion-button"
               type="button"
@@ -14,7 +29,12 @@ export default function Accordion(props) {
               data-bs-target="#collapseOne"
               aria-expanded="true"
               aria-controls="collapseOne"
-              style={props.Mode==="light"?{backgroundColor:"white",color:"black"}:{backgroundColor:"#202c68",color:"white"}}
+              // LightMode <===> DarkMode
+              style={
+                props.Mode === "light"
+                  ? { backgroundColor: "white", color: "black" }
+                  : { backgroundColor: "#202c68", color: "white" }
+              }
             >
               Accordion Item #1
             </button>
@@ -37,7 +57,14 @@ export default function Accordion(props) {
             </div>
           </div>
         </div>
-        <div className="accordion-item" style={props.Mode==="light"?{backgroundColor:"white",color:"black"}:{backgroundColor:"#202c68",color:"white"}}>
+        <div
+          className="accordion-item"
+          style={
+            props.Mode === "light"
+              ? { backgroundColor: "white", color: "black" }
+              : { backgroundColor: "#202c68", color: "white" }
+          }
+        >
           <h2 className="accordion-header" id="headingTwo">
             <button
               className="accordion-button collapsed"
@@ -46,7 +73,11 @@ export default function Accordion(props) {
               data-bs-target="#collapseTwo"
               aria-expanded="false"
               aria-controls="collapseTwo"
-              style={props.Mode==="light"?{backgroundColor:"white",color:"black"}:{backgroundColor:"#202c68",color:"white"}}
+              style={
+                props.Mode === "light"
+                  ? { backgroundColor: "white", color: "black" }
+                  : { backgroundColor: "#202c68", color: "white" }
+              }
             >
               Accordion Item #2
             </button>
@@ -69,7 +100,14 @@ export default function Accordion(props) {
             </div>
           </div>
         </div>
-        <div className="accordion-item" style={props.Mode==="light"?{backgroundColor:"white",color:"black"}:{backgroundColor:"#202c68",color:"white"}}>
+        <div
+          className="accordion-item"
+          style={
+            props.Mode === "light"
+              ? { backgroundColor: "white", color: "black" }
+              : { backgroundColor: "#202c68", color: "white" }
+          }
+        >
           <h2 className="accordion-header" id="headingThree">
             <button
               className="accordion-button collapsed"
@@ -78,7 +116,11 @@ export default function Accordion(props) {
               data-bs-target="#collapseThree"
               aria-expanded="false"
               aria-controls="collapseThree"
-              style={props.Mode==="light"?{backgroundColor:"white",color:"black"}:{backgroundColor:"#202c68",color:"white"}}
+              style={
+                props.Mode === "light"
+                  ? { backgroundColor: "white", color: "black" }
+                  : { backgroundColor: "#202c68", color: "white" }
+              }
             >
               Accordion Item #3
             </button>
@@ -89,7 +131,7 @@ export default function Accordion(props) {
             aria-labelledby="headingThree"
             data-bs-parent="#accordionExample"
           >
-            <div className="accordion-body" >
+            <div className="accordion-body">
               <strong>This is the third item's accordion body.</strong> It is
               hidden by default, until the collapse plugin adds the appropriate
               classNamees that we use to style each element. These classNamees
