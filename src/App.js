@@ -1,13 +1,14 @@
 import "./App.css";
-// import Accordion from "./components/Accordion";
+import Accordion from "./components/Accordion";
 import Navbar from "./components/Navbar";
 import TextArea from "./components/TextArea";
 import AlertBox from "./components/AlertBox";
 import React, { useState } from "react";
-// import { BrowserRouter, Routes, Route } from "react-router-dom";
+import {  Routes, Route, HashRouter } from "react-router-dom";
 
 function App() {
-  //Mode or alert ko set karane ke liye state function
+
+  // Mode or alert ko set karane ke liye state function
   const [Mode, setMode] = useState("light");
   const [alert, setAlert] = useState({ message: "", type: "" });
   //2 second alert show kara kar automatic hide karana
@@ -39,24 +40,24 @@ function App() {
 
   return (
     <>
-      {/* <BrowserRouter> */}
+      <HashRouter>
       <Navbar Mode={Mode} modeToggler={modeToggler} />
       <AlertBox alert={alert} />
-      {/* <Routes> */}
-      {/* <Route path="/About" element={<Accordion Mode={Mode} />} /> */}
+      <Routes>/
+      <Route path="/About" element={<Accordion Mode={Mode} />} />
 
-      {/* <Route */}
-      {/* path="/" */}
-      {/* element={ */}
+      <Route
+      path="/"
+      element={
       <TextArea
         heading="Write or paste your text below"
         Mode={Mode}
         showMsg={showMsg}
       />
-      {/* } */}
-      {/* /> */}
-      {/* </Routes> */}
-      {/* </BrowserRouter> */}
+      }
+      />
+      </Routes>
+      </HashRouter>
     </>
   );
 }
