@@ -80,11 +80,10 @@ export default function TextArea(props) {
       </div>
       <div className="container col-10">
         {/* //Info about text */}
-        <h2>Text Summary</h2>
+        <h2 className="mt-3">Text Summary</h2>
         <p>
           <span className="p-1 fs-5 fw-bold">Total Words : </span>
           <span className="border border-dark p-1">{finalArray.length}</span>
-          <span className="ms-5">Note :- Line spacing is not counted</span>
         </p>
         <p>
           <span className="p-1 fs-5 fw-bold">Total Characters : </span>
@@ -92,19 +91,19 @@ export default function TextArea(props) {
           <span className="border border-dark p-1">
             {finalArray.join(" ").length}
           </span>
-          <span className="ms-5">
+          <div className="">
             Note :- Line space or extra spaces between words are ignored
-          </span>
+          </div>
         </p>
         <p>
           <span className="p-1 fs-5 fw-bold">Reading Time : </span>
           <span className="border border-dark p-1">
             {finalArray.length * 0.004} <strong> Minutes</strong>
           </span>
-          <span className="ms-5">Note :- Assuming average time of reading is 250 words per minute</span>
+          <div className="">Note :- Assuming average time of reading is 250 words per minute</div>
         </p>
-        <h2>Review</h2>
-        <p>{text === "" ? "Write something in the box for review !" : text}</p>
+        <h2 style={{color:"red"}}>Review</h2>
+        <p style={{color:"red"}}>{text === "" ? "Write something in the box for review !" : text}</p>
       </div>
     </>
   );
